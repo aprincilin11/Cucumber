@@ -1,0 +1,24 @@
+package com.utils;
+
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.IOException;
+import java.util.Properties;
+
+public class ConfigReader {
+    //This class is for reading the config file
+
+    private Properties prop;
+    public Properties init_prop() {
+        prop  = new Properties();
+        try {
+            FileInputStream ip = new FileInputStream("C:\\Users\\rajas\\IdeaProjects\\CucumberPOMProject\\CucumberPOMProject\\src\\test\\resources\\config\\config.properties");
+            prop.load(ip);
+        } catch(FileNotFoundException e){
+            e.printStackTrace();
+        } catch(IOException e ){
+            e.printStackTrace();
+        }
+        return prop;
+    }
+}
